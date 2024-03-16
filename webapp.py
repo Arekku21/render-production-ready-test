@@ -28,18 +28,16 @@ def download_file():
     return send_file(file_path, mimetype='text/plain', as_attachment=True, download_name='download_simple.txt')
 
 
-# NOTE: The upload route returns a file to be downloaded
+# NOTE: The donwloaded route returns a file to be downloaded
 @app.route('/ftp/download', methods=['POST'])
 def ftp_download():
 
     #NOTE: Here are using the FTPlib to connect to the FTP server and download the file
 
-    # ! change the ftp_host, ftp_user, ftp_password, and ftp_directory to the correct values to your FTP server
-    # ! this was tested using WSL with a vsftpd server running on the same machine
-    ftp_host = '172.28.249.58'
-    ftp_user = 'ftpuser'
-    ftp_password = 'password'
-    ftp_directory = '/srv/ftp/'
+    ftp_host = 'ftp.dlptest.com'
+    ftp_user = 'dlpuser'
+    ftp_password = 'rNrKYTX9g7z3RgJRmxWuGHbeu'
+    ftp_directory = ''
     
     #NOTE: using the request.form.get to get the filename from the form data
     file_name = request.form.get('filename')
@@ -64,18 +62,16 @@ def ftp_download():
     return f'File "{file_name}" downloaded to "{local_file_path}"'
 
 
-# NOTE: The upload route returns a file to be downloaded
+# NOTE: The upload route returns a file to be uploaded
 @app.route('/ftp/upload', methods=['POST'])
 def ftp_upload():
 
     #NOTE: Here are using the FTPlib to connect to the FTP server and download the file
 
-    # ! change the ftp_host, ftp_user, ftp_password, and ftp_directory to the correct values to your FTP server
-    # ! this was tested using WSL with a vsftpd server running on the same machine
-    ftp_host = '172.28.249.58'
-    ftp_user = 'ftpuser'
-    ftp_password = 'password'
-    ftp_directory = '/srv/ftp/'
+    ftp_host = 'ftp.dlptest.com'
+    ftp_user = 'dlpuser'
+    ftp_password = 'rNrKYTX9g7z3RgJRmxWuGHbeu'
+    ftp_directory = ''
 
     file = request.files['file']
     file_name = file.filename

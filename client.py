@@ -6,13 +6,13 @@ import requests
 # NOTE: This is a client script that sends a POST request to the server to upload a file to the server using FTP.
 
 # this is the url that nginx is listening to for the upload
-url = 'http://127.0.0.1:80/ftp/upload'
+url = 'https://render-production-ready-test.onrender.com/ftp/upload'
 
 print("\nAttempting to upload file to server...")
 print(f"POST request to {url}")
 
 # file path of the file to be uploaded
-file_path = 'D:/Documents/GitHub/DeliverableStructure/DeliverableFolderStructure/CourseProjects/nginx_flask_advanced/upload.txt'
+file_path = 'upload.txt'
 
 # open the file and send it in the request
 with open(file_path, 'rb') as file:
@@ -26,7 +26,7 @@ print(response.text)
 # NOTE: This is a client script that sends a POST request to the server to download a file from the server using FTP.
 
 # this is the url that nginx is listening to for the download
-url = 'http://127.0.0.1:80/ftp/download'
+url = 'https://render-production-ready-test.onrender.com/ftp/download'
 
 print("\nAttempting to download file from server...")
 print(f"POST request to {url}")
